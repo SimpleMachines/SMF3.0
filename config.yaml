@@ -1,0 +1,28 @@
+name: Simple Machines Forum
+identifier: org.simplemachines.smf
+version: 3.0
+author:
+    name: Simple Machines
+    email: norv@simplemachines.org
+    website: http://simplemachines.org
+template_ns: smf
+language_ns: smf
+namespace: \smCore\modules\smf
+routes:
+    boardindex:
+        title: boardindex
+        controller: smCore\modules\smf\BoardIndexController
+        order: 30
+        visible: true
+        resource: [role, member]
+events:
+    smCore.post_router:
+        callback: [\smCore\modules\smf\helpers\Loader.php, postRouter]
+        enabled: true
+    smCore.core_config_loaded:
+        callback: [\smCore\modules\smf\helpers\Loader.php, coreConfigLoaded]
+        enabled: true
+    smCore.core_user_groups_loaded:
+        callback: [\smCore\modules\smf\helpers\ForumMember.php, coreGroupsLoaded]
+        enabled: true
+
