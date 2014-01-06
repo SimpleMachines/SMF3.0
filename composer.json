@@ -1,0 +1,32 @@
+{
+        "name": "smf/core",
+        "type": "library",
+        "description": "The SMF forum core",
+        "keywords": ["forum", "laravel"],
+        "homepage": "http://simplemachines.com",
+        "license": "GPL-3.0+",
+        "authors": [
+                {
+                        "name": "Simple Machines",
+                        "email": "",
+                        "homepage": "http://www.simplemachines.org"
+                }
+        ],
+        "support": {
+                "email": "",
+                "irc": ""
+        },
+        "require": {
+                "php": ">=5.3.0",
+                "illuminate/support": "4.0.*"
+        },
+        "autoload": {
+                "classmap": [
+                        "src/migrations"
+                ],
+                "psr-0": {
+                        "smf": "src"
+                }
+        },
+        "minimum-stability": "dev"
+}
